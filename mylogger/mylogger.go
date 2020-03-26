@@ -22,6 +22,15 @@ const (
 	FATAL
 )
 
+type Logger interface {
+	Dubug(format string, a ...interface{})
+	Trace(format string, a ...interface{})
+	Info(format string, a ...interface{})
+	Waring(format string, a ...interface{})
+	Error(format string, a ...interface{})
+	Fatal(format string, a ...interface{})
+}
+
 // parseLogLevel 解析str 转成 LogLevel
 func parseLogLevel(levelStr string) (LogLevel, error) {
 
